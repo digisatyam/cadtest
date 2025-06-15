@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewellery CAD Design Course | 100% Placement Guarantee</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset and Global Styles */
+        :root {
+            --gold: #D4AF37;
+            --dark-bg: #121212;
+            --card-bg: #1E1E1E;
+            --light-gray: #333333;
+            --text-light: #f5f5f5;
+            --text-medium: #b3b3b3;
+            --text-dark: #121212;
+            --sans-serif: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--sans-serif);
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        h1 { font-size: 3rem; }
+        h2 { font-size: 2.5rem; color: var(--gold); }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-medium);
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Call-to-Action Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--text-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: #c09e2e;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--gold);
+            color: var(--text-dark);
+            transform: translateY(-3px);
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url('https://images.unsplash.com/photo-1617053305943-85b42d5e3053?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            color: var(--text-light);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content h1 span {
+            color: var(--gold);
+        }
+
+        .hero-content .subheading {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            color: var(--text-medium);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* --- Sticky WhatsApp Button --- */
+        .whatsapp-sticky {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-sticky:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Highlights Section --- */
+        #highlights {
+            background-color: var(--card-bg);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--dark-bg);
+            border-radius: 10px;
+            border: 1px solid var(--light-gray);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .highlight-item .icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .highlight-item h3 {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        /* --- Course Overview Section --- */
+        .overview-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .overview-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .overview-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .overview-details ul li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .overview-details ul li i {
+            color: var(--gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        /* --- Why Choose Us Section --- */
+        #why-choose-us {
+            background-color: var(--card-bg);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 30px 20px;
+            background-color: var(--dark-bg);
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
+        }
+        
+        .stat-item .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+        
+        .stat-item .stat-label {
+            font-size: 1rem;
+            color: var(--text-medium);
+        }
+
+        /* --- Testimonials Section --- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid var(--gold);
+        }
+        
+        .testimonial-card p.quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            color: var(--text-light);
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--gold);
+        }
+
+        /* --- Placement Partners Section --- */
+        #partners {
+            background-color: var(--card-bg);
+        }
+
+        .partners-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            opacity: 0.7;
+        }
+
+        .partners-logos img {
+            max-height: 40px;
+            filter: grayscale(100%) brightness(1.5);
+            transition: all 0.3s ease;
+        }
+
+        .partners-logos img:hover {
+            filter: none;
+            transform: scale(1.1);
+        }
+        
+        .partners-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-medium);
+        }
+        
+        /* --- Enquiry Form Section --- */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 10px;
+            border-top: 5px solid var(--gold);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-medium);
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid var(--light-gray);
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-size: 1rem;
+            font-family: var(--sans-serif);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
+        }
+        
+        .form-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+
+        /* --- FAQ Section --- */
+        #faq {
+            background-color: var(--card-bg);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: var(--dark-bg);
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .faq-item summary {
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            list-style: none; /* Hide default marker */
+        }
+
+        .faq-item summary::-webkit-details-marker { display: none; } /* Hide default marker for Chrome/Safari */
+
+        .faq-item summary::after {
+            content: '\f078'; /* Font Awesome down arrow */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item[open] summary::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .faq-item .faq-content {
+            padding: 0 20px 20px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* --- Footer --- */
+        .site-footer {
+            background-color: var(--dark-bg);
+            padding: 50px 0;
+            border-top: 1px solid var(--light-gray);
+            text-align: center;
+        }
+        
+        .footer-content .contact-info {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-content .contact-info i {
+            margin-right: 10px;
+        }
+        
+        .social-icons {
+            margin-bottom: 30px;
+        }
+
+        .social-icons a {
+            color: var(--text-medium);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            color: var(--text-medium);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--text-light);
+        }
+        
+        .copyright {
+            color: var(--text-medium);
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .overview-content { grid-template-columns: 1fr; }
+            .overview-image { order: -1; margin-bottom: 30px; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .hero-section { min-height: auto; padding: 120px 20px; }
+            .hero-cta-buttons { flex-direction: column; }
+            section { padding: 60px 0; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .form-container { padding: 30px; }
+        }
+
+        @media (max-width: 576px) {
+            .container { padding: 0 15px; }
+            .highlights-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-links { display: flex; flex-direction: column; gap: 10px; }
+            .footer-links a { margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="https://wa.me/919135684363" target="_blank" class="whatsapp-sticky" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Become a Certified CAD Designer <br><span>100% Placement Guaranteed!</span></h1>
+            <p class="subheading">Master Jewellery CAD Designing in 4–6 Months using Rhino & Matrix Software. Join our offline classroom in Mumbai and kickstart your professional journey.</p>
+            <div class="hero-cta-buttons">
+                <a href="#enquiry-form" class="btn btn-primary">Book Free Demo</a>
+                <a href="tel:+919135684363" class="btn btn-secondary">Call Now – 9135684363</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Course Highlights Section -->
+        <section id="highlights">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Course Highlights</h2>
+                    <p>Everything you need to become a successful jewellery CAD designer.</p>
+                </div>
+                <div class="highlights-grid">
+                    <div class="highlight-item">
+                        <div class="icon"><i class="fas fa-drafting-compass"></i></div>
+                        <h3>Complete 3D CAD Training</h3>
+                        <p>From fundamentals to advanced techniques, we cover it all.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="icon"><i class="fas fa-desktop"></i></div>
+                        <h3>Rhino + Matrix Mastery</h3>
+                        <p>Gain expert-level proficiency in industry-standard software.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>Offline Classroom in Mumbai</h3>
+                        <p>Learn in a focused, hands-on, and collaborative environment.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="icon"><i class="fas fa-gem"></i></div>
+                        <h3>Real Industry Projects</h3>
+                        <p>Build a stunning portfolio by working on real-world designs.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="icon"><i class="fas fa-briefcase"></i></div>
+                        <h3>Internship & Placement</h3>
+                        <p>Guaranteed support to land you a job in a top company.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h3>Affordable Fees</h3>
+                        <p>Premium education at a price that offers incredible value.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Course Overview Section -->
+        <section id="overview">
+            <div class="container">
+                 <div class="section-header">
+                    <h2>Course Overview</h2>
+                </div>
+                <div class="overview-content">
+                    <div class="overview-details">
+                        <ul>
+                            <li><i class="far fa-clock"></i><div><strong>Duration:</strong> 4–6 Months Comprehensive Training</div></li>
+                            <li><i class="fas fa-chalkboard-teacher"></i><div><strong>Mode:</strong> 100% Offline Classroom Training in Mumbai for personalized attention.</div></li>
+                            <li><i class="fas fa-tools"></i><div><strong>Tools Taught:</strong> In-depth mastery of Rhino 3D and Matrix Gold, the leading software in jewellery design.</div></li>
+                            <li><i class="fas fa-project-diagram"></i><div><strong>Project Experience:</strong> You will work on a diverse portfolio of live projects, from engagement rings to intricate necklaces, preparing you for industry demands.</div></li>
+                        </ul>
+                    </div>
+                    <div class="overview-image">
+                        <img src="https://images.unsplash.com/photo-1599374149272-3c2243767664?q=80&w=1974&auto=format&fit=crop" alt="CAD Jewellery Designing on a computer screen">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose Us?</h2>
+                    <p>Our numbers speak for our success and commitment.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years of Training Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">300+</span>
+                        <span class="stat-label">Students Trained & Placed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Google Review Rating</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Placement Support</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Testimonials Section -->
+        <section id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Success Stories from Our Students</h2>
+                    <p>Hear what our alumni have to say about their journey with us.</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="quote">"The course was a game-changer. The hands-on training on real projects gave me the confidence I needed. I got placed in a top firm even before my course ended. Highly recommended!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/150?img=1" alt="Student Priya Sharma">
+                            <div class="author-info">
+                                <h4>Priya Sharma</h4>
+                                <p>CAD Designer at Tanishq</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">"I had no prior design experience, but the trainers were incredibly patient and knowledgeable. The A-Z curriculum is perfectly structured. The placement assistance is genuine and effective."</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/150?img=2" alt="Student Rahul Verma">
+                            <div class="author-info">
+                                <h4>Rahul Verma</h4>
+                                <p>3D Artist at PC Jeweller</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">"From a complete beginner to a confident designer, my transformation has been amazing. The focus on Rhino and Matrix is exactly what the industry demands. Thank you for the incredible support!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://i.pravatar.cc/150?img=3" alt="Student Anjali Desai">
+                            <div class="author-info">
+                                <h4>Anjali Desai</h4>
+                                <p>Freelance Jewellery Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Placement Partners Section -->
+        <section id="partners">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Placement Partners</h2>
+                    <p class="partners-text">Our students are working at leading national and international jewellery companies.</p>
+                </div>
+                <div class="partners-logos">
+                    <!-- Replace with actual transparent PNG logos -->
+                    <img src="https://via.placeholder.com/150x40/FFFFFF/CCCCCC?text=Tanishq" alt="Tanishq Logo">
+                    <img src="https://via.placeholder.com/150x40/FFFFFF/CCCCCC?text=Kalyan" alt="Kalyan Jewellers Logo">
+                    <img src="https://via.placeholder.com/150x40/FFFFFF/CCCCCC?text=Malabar" alt="Malabar Gold & Diamonds Logo">
+                    <img src="https://via.placeholder.com/150x40/FFFFFF/CCCCCC?text=PC Jeweller" alt="PC Jeweller Logo">
+                    <img src="https://via.placeholder.com/150x40/FFFFFF/CCCCCC?text=BlueStone" alt="BlueStone Logo">
+                </div>
+            </div>
+        </section>
+
+        <!-- Enquiry Form Section (UPDATED) -->
+        <section id="enquiry-form">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Book Your Free Demo Class!</h2>
+                    <p>Fill out the form below and our career counsellor will contact you.</p>
+                </div>
+                <div class="form-container">
+                    <!-- THIS IS THE UPDATED LINE -->
+                    <form action="https://formsubmit.co/sattukml@gmail.com" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number</label>
+                            <input type="tel" id="mobile" name="mobile" required placeholder="Enter your 10-digit mobile number">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required placeholder="Enter your city">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-time">Preferred Contact Time</label>
+                            <select id="contact-time" name="contact-time">
+                                <option value="anytime">Anytime</option>
+                                <option value="morning">Morning (9am - 12pm)</option>
+                                <option value="afternoon">Afternoon (12pm - 4pm)</option>
+                                <option value="evening">Evening (4pm - 8pm)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%;">Submit Enquiry</button>
+                    </form>
+                    <p class="form-note"><i class="fas fa-headset"></i> Get a Callback in 10 Minutes!</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>Who can join this course?</summary>
+                        <div class="faq-content">
+                            <p>Anyone with a passion for jewellery design can join. This course is perfect for students, aspiring designers, and professionals from the jewellery industry looking to upskill. A background in design is helpful but not mandatory.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What is the fee for this course?</summary>
+                        <div class="faq-content">
+                            <p>We offer premium training at very affordable fees with flexible payment options and EMI facilities. For the exact fee structure and current offers, please fill out the enquiry form or call us to speak with a course advisor.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do I need any prior experience in design or software?</summary>
+                        <div class="faq-content">
+                            <p>No prior experience is required. Our curriculum is designed to take you from the absolute basics to an advanced level (A to Z). All you need is a willingness to learn and a creative mindset.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" open>
+                        <summary>Is the placement really guaranteed?</summary>
+                        <div class="faq-content">
+                            <p>We provide 100% placement *assistance*. This includes portfolio development, resume building, mock interviews, and connecting you with our extensive network of placement partners. Our track record is excellent, and we are committed to helping every eligible student secure a job.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <a href="tel:+919135684363"><i class="fas fa-phone-alt"></i> 9135684363</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://wa.me/919135684363" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+                <p class="copyright">&copy; 2024 Jewellery CAD Design Institute. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
